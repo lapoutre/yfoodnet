@@ -15,3 +15,186 @@
 #     password: changeme
 #     name:     Kris Wallsmith
 #     email:    kris.wallsmith@symfony-project.com
+Restaurant:
+  restaurant_1:
+    name: Restaurant Boston
+    location: 123 main street Boston
+  restaurant_2:
+    name: Restaurant NY
+    location: 12 John street NY
+  restaurant_3:
+    name: Restaurant Seattle
+    location: 1 Victor street Seattle
+    
+Area:
+  area B-A:
+    name: A
+    seats: 10
+    waiter_id: 5
+    restaurant_id: 1
+  area B-B:
+    name: B
+    seats: 11
+    waiter_id: 6
+    restaurant_id: 1
+  area B-C:
+    name: C
+    seats: 12
+    waiter_id: 7
+    restaurant_id: 1
+  area NY-A:
+    name: A
+    seats: 10
+    waiter_id: 8
+    restaurant_id: 2
+  area NY-B:
+    name: B
+    seats: 11
+    waiter_id: 9
+    restaurant_id: 2
+  area NY-C:
+    name: C
+    seats: 12
+    waiter_id: 10
+    restaurant_id: 2
+  area S-A:
+    name: A
+    seats: 10
+    waiter_id: 11
+    restaurant_id: 3
+  area S-B:
+    name: B
+    seats: 11
+    waiter_id: 12
+    restaurant_id: 3
+  area S-C:
+    name: C
+    seats: 12
+    waiter_id: 13
+    restaurant_id: 3
+    
+DiningTable:
+  table B-A-1:
+    name: table 1
+    area_id: 1
+  table B-A-2:
+    name: table 2
+    area_id: 1
+  table B-A-3:
+    name: table 3
+    area_id: 1
+  table B-B-1:
+    name: table 1
+    area_id: 2
+  table B-B-2:
+    name: table 2
+    area_id: 2
+  table B-B-3:
+    name: table 3
+    area_id: 2
+  table B-C-1:
+    name: table 1
+    area_id: 3
+  table B-C-2:
+    name: table 2
+    area_id: 3
+  table B-C-3:
+    name: table 3
+    area_id: 3
+  table NY-A-1:
+    name: table 1
+    area_id: 4
+  table NY-A-2:
+    name: table 2
+    area_id: 4
+  table NY-A-3:
+    name: table 3
+    area_id: 4
+  table NY-B-1:
+    name: table 1
+    area_id: 5
+  table NY-B-2:
+    name: table 2
+    area_id: 5
+  table NY-B-3:
+    name: table 3
+    area_id: 5
+  table NY-C-1:
+    name: table 1
+    area_id: 6
+  table NY-C-2:
+    name: table 2
+    area_id: 6
+  table NY-C-3:
+    name: table 3
+    area_id: 6
+  table S-A-1:
+    name: table 1
+    area_id: 7
+  table S-A-2:
+    name: table 2
+    area_id: 7
+  table S-A-3:
+    name: table 3
+    area_id: 7
+  table S-B-1:
+    name: table 1
+    area_id: 8
+  table S-B-2:
+    name: table 2
+    area_id: 8
+  table S-B-3:
+    name: table 3
+    area_id: 8
+  table S-C-1:
+    name: table 1
+    area_id: 9
+  table S-C-2:
+    name: table 2
+    area_id: 9
+  table NS-C-3:
+    name: table 3
+    area_id: 9
+
+Menu:
+  italia:
+    name: Menu Italia
+    content: <p>Entree : Salad</p><p>Main Dish: pasta</p><p>Cheese: cheese</p><p>Dessert: ice cream</p>
+    price: 20
+    is_active: 1
+  menu_china:
+    name: Menu China
+    content: <p>Entree : Salad</p><p>Main Dish: rice</p><p>Cheese: cheese</p><p>Dessert: ice cream</p>
+    price: 20
+    is_active: 0
+  menu_usa:
+    name: Menu USA
+    content: <p>Entree : Salad</p><p>Main Dish: hamburgers</p><p>Cheese: cheddar</p><p>Dessert: ice cream</p>
+    price: 20
+    is_active: 0
+
+MenuOrder:
+  order_1:
+    quantity: 4
+    is_in_progress: 1
+    is_ready: 0
+    is_finished: 0
+    using_paypal: 1
+    menu_id: 3
+    dining_table_id: 1
+  order_2:
+    quantity: 3
+    is_in_progress: 0
+    is_ready: 1
+    is_finished: 0
+    using_paypal: 0
+    menu_id: 3
+    dining_table_id: 10
+  order_3:
+    quantity: 5
+    is_in_progress: 0
+    is_ready: 0
+    is_finished: 1
+    using_paypal: 1
+    menu_id: 3
+    dining_table_id: 20

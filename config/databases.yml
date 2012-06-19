@@ -7,4 +7,4 @@ all:
     param:
       dsn:      mysql:host=localhost;dbname=yfoodnet
       username: root
-      password: root
+      password: 

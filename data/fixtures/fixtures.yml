@@ -30,131 +30,24 @@ Area:
   area B-A:
     name: A
     seats: 10
-    waiter_id: 5
+    sf_guard_user_id: 3
     restaurant_id: 1
   area B-B:
     name: B
     seats: 11
-    waiter_id: 6
-    restaurant_id: 1
+    sf_guard_user_id: 3
+    restaurant_id: 2
   area B-C:
     name: C
     seats: 12
-    waiter_id: 7
-    restaurant_id: 1
-  area NY-A:
-    name: A
-    seats: 10
-    waiter_id: 8
-    restaurant_id: 2
-  area NY-B:
-    name: B
-    seats: 11
-    waiter_id: 9
-    restaurant_id: 2
-  area NY-C:
-    name: C
-    seats: 12
-    waiter_id: 10
-    restaurant_id: 2
-  area S-A:
-    name: A
-    seats: 10
-    waiter_id: 11
-    restaurant_id: 3
-  area S-B:
-    name: B
-    seats: 11
-    waiter_id: 12
-    restaurant_id: 3
-  area S-C:
-    name: C
-    seats: 12
-    waiter_id: 13
+    sf_guard_user_id: 3
     restaurant_id: 3
     
 DiningTable:
   table B-A-1:
+    sf_guard_user_id: 4
     name: table 1
     area_id: 1
-  table B-A-2:
-    name: table 2
-    area_id: 1
-  table B-A-3:
-    name: table 3
-    area_id: 1
-  table B-B-1:
-    name: table 1
-    area_id: 2
-  table B-B-2:
-    name: table 2
-    area_id: 2
-  table B-B-3:
-    name: table 3
-    area_id: 2
-  table B-C-1:
-    name: table 1
-    area_id: 3
-  table B-C-2:
-    name: table 2
-    area_id: 3
-  table B-C-3:
-    name: table 3
-    area_id: 3
-  table NY-A-1:
-    name: table 1
-    area_id: 4
-  table NY-A-2:
-    name: table 2
-    area_id: 4
-  table NY-A-3:
-    name: table 3
-    area_id: 4
-  table NY-B-1:
-    name: table 1
-    area_id: 5
-  table NY-B-2:
-    name: table 2
-    area_id: 5
-  table NY-B-3:
-    name: table 3
-    area_id: 5
-  table NY-C-1:
-    name: table 1
-    area_id: 6
-  table NY-C-2:
-    name: table 2
-    area_id: 6
-  table NY-C-3:
-    name: table 3
-    area_id: 6
-  table S-A-1:
-    name: table 1
-    area_id: 7
-  table S-A-2:
-    name: table 2
-    area_id: 7
-  table S-A-3:
-    name: table 3
-    area_id: 7
-  table S-B-1:
-    name: table 1
-    area_id: 8
-  table S-B-2:
-    name: table 2
-    area_id: 8
-  table S-B-3:
-    name: table 3
-    area_id: 8
-  table S-C-1:
-    name: table 1
-    area_id: 9
-  table S-C-2:
-    name: table 2
-    area_id: 9
-  table NS-C-3:
-    name: table 3
-    area_id: 9
 
 Menu:
   italia:
@@ -189,7 +82,7 @@ MenuOrder:
     is_finished: 0
     using_paypal: 0
     menu_id: 3
-    dining_table_id: 10
+    dining_table_id: 1
   order_3:
     quantity: 5
     is_in_progress: 0
@@ -197,4 +90,4 @@ MenuOrder:
     is_finished: 1
     using_paypal: 1
     menu_id: 3
-    dining_table_id: 20
+    dining_table_id: 1

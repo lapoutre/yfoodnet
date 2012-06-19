@@ -23,19 +23,22 @@ Area:
  columns:
    name: { type: string(255), notnull: true }
    seats: { type: int(4), notnull: true }
-   waiter_id: { type: int(4), notnull: true }
+   sf_guard_user_id: { type: integer, notnull: true }
    restaurant_id: { type: integer, notnull: true }
  relations:
    Restaurant: { onDelete: CASCADE, local: restaurant_id, foreign: id, foreignType: one }
+   sfGuardUser: { onDelete: CASCADE, class: sfGuardUser, foreignType: one}
 
 DiningTable:
  actAs: ~
  tableName: dining_table
  columns:
+   sf_guard_user_id: { type: integer, notnull: true}
    name: { type: string(255), notnull: true }
    area_id: { type: integer, notnull: true }
  relations:
    Area: { onDelete: CASCADE, local: area_id, foreign: id, foreignAlias: Areas, foreignType: one}
+   sfGuardUser: { onDelete: CASCADE, class: sfGuardUser, foreignType: one}
 
 Menu:
  actAs: ~

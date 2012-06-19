@@ -12,7 +12,6 @@ dev:
     web_debug:              true
     cache:                  false
     no_script_name:         false
-    etag:                   false
 
 test:
   .settings:
@@ -33,3 +32,10 @@ all:
 
     # Enable the database manager
     use_database:           true
+    
+    enabled_modules:        [default, sfGuardGroup, sfGuardPermission, sfGuardUser, sfGuardAuth]
+    login_module:           sfGuardAuth
+    login_action:           signin
+ 
+    secure_module:          sfGuardAuth
+    secure_action:          secure

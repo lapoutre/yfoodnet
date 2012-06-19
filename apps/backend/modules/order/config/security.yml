@@ -1,0 +1,11 @@
+all:
+  secure: on
+  
+list:
+  credentials: [[admin, waiter]]
+
+edit:
+  credentials: [[admin, waiter]]
+
+new:
+  credentials: table

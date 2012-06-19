@@ -6,3 +6,5 @@ data/sql/*
 lib/model/om/*
 lib/model/map/*
 nbproject/*
+/plugins/.channels/
+/plugins/.registry/

@@ -284,6 +284,48 @@ class orderActions extends autoOrderActions {
     protected function isValidSortColumn($column) {
         return Doctrine_Core::getTable('MenuOrder')->hasColumn($column);
     }
+    
+      public function executeListProgress(sfWebRequest $request)
+  {
+    $order = $this->getRoute()->getObject();
+    $order->setIsInProgress(true);
+    $order->setIsReady(false);
+    $order->setIsFinished(false);
+ 
+    $this->getUser()->setFlash('notice', 'The selected order have been set in progress');
+    
+    $order->save();
+ 
+    $this->redirect('menu_order');
+  }
 
+        public function executeListReady(sfWebRequest $request)
+  {
+    $order = $this->getRoute()->getObject();
+    $order->setIsInProgress(false);
+    $order->setIsReady(true);
+    $order->setIsFinished(false);
+ 
+    $this->getUser()->setFlash('notice', 'The selected order have been set ready');
+    
+    $order->save();
+ 
+    $this->redirect('menu_order');
+  }
+  
+          public function executeListFinished(sfWebRequest $request)
+  {
+    $order = $this->getRoute()->getObject();
+    $order->setIsInProgress(false);
+    $order->setIsReady(false);
+    $order->setIsFinished(true);
+ 
+    $this->getUser()->setFlash('notice', 'The selected order have been set finished');
+    
+    $order->save();
+ 
+    $this->redirect('menu_order');
+  }
+  
 }
 

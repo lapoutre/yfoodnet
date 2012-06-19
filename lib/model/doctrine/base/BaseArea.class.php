@@ -7,23 +7,26 @@
  * 
  * @property string $name
  * @property int $seats
- * @property int $waiter_id
+ * @property integer $sf_guard_user_id
  * @property integer $restaurant_id
  * @property Restaurant $Restaurant
+ * @property sfGuardUser $sfGuardUser
  * @property DiningTable $Areas
  * 
- * @method string      getName()          Returns the current record's "name" value
- * @method int         getSeats()         Returns the current record's "seats" value
- * @method int         getWaiterId()      Returns the current record's "waiter_id" value
- * @method integer     getRestaurantId()  Returns the current record's "restaurant_id" value
- * @method Restaurant  getRestaurant()    Returns the current record's "Restaurant" value
- * @method DiningTable getAreas()         Returns the current record's "Areas" value
- * @method Area        setName()          Sets the current record's "name" value
- * @method Area        setSeats()         Sets the current record's "seats" value
- * @method Area        setWaiterId()      Sets the current record's "waiter_id" value
- * @method Area        setRestaurantId()  Sets the current record's "restaurant_id" value
- * @method Area        setRestaurant()    Sets the current record's "Restaurant" value
- * @method Area        setAreas()         Sets the current record's "Areas" value
+ * @method string      getName()             Returns the current record's "name" value
+ * @method int         getSeats()            Returns the current record's "seats" value
+ * @method integer     getSfGuardUserId()    Returns the current record's "sf_guard_user_id" value
+ * @method integer     getRestaurantId()     Returns the current record's "restaurant_id" value
+ * @method Restaurant  getRestaurant()       Returns the current record's "Restaurant" value
+ * @method sfGuardUser getSfGuardUser()      Returns the current record's "sfGuardUser" value
+ * @method DiningTable getAreas()            Returns the current record's "Areas" value
+ * @method Area        setName()             Sets the current record's "name" value
+ * @method Area        setSeats()            Sets the current record's "seats" value
+ * @method Area        setSfGuardUserId()    Sets the current record's "sf_guard_user_id" value
+ * @method Area        setRestaurantId()     Sets the current record's "restaurant_id" value
+ * @method Area        setRestaurant()       Sets the current record's "Restaurant" value
+ * @method Area        setSfGuardUser()      Sets the current record's "sfGuardUser" value
+ * @method Area        setAreas()            Sets the current record's "Areas" value
  * 
  * @package    yfoodnet
  * @subpackage model
@@ -45,10 +48,9 @@ abstract class BaseArea extends sfDoctrineRecord
              'notnull' => true,
              'length' => 4,
              ));
-        $this->hasColumn('waiter_id', 'int', 4, array(
-             'type' => 'int',
+        $this->hasColumn('sf_guard_user_id', 'integer', null, array(
+             'type' => 'integer',
              'notnull' => true,
-             'length' => 4,
              ));
         $this->hasColumn('restaurant_id', 'integer', null, array(
              'type' => 'integer',
@@ -64,6 +66,11 @@ abstract class BaseArea extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('Restaurant', array(
              'local' => 'restaurant_id',
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE'));
+
+        $this->hasOne('sfGuardUser', array(
+             'local' => 'sf_guard_user_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
 

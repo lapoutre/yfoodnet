@@ -15,15 +15,17 @@ abstract class BaseDiningTableForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'      => new sfWidgetFormInputHidden(),
-      'name'    => new sfWidgetFormInputText(),
-      'area_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Area'), 'add_empty' => false)),
+      'id'               => new sfWidgetFormInputHidden(),
+      'sf_guard_user_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => false)),
+      'name'             => new sfWidgetFormInputText(),
+      'area_id'          => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Area'), 'add_empty' => false)),
     ));
 
     $this->setValidators(array(
-      'id'      => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'name'    => new sfValidatorString(array('max_length' => 255)),
-      'area_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Area'))),
+      'id'               => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'sf_guard_user_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'))),
+      'name'             => new sfValidatorString(array('max_length' => 255)),
+      'area_id'          => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Area'))),
     ));
 
     $this->widgetSchema->setNameFormat('dining_table[%s]');
